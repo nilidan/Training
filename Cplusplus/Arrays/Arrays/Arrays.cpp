@@ -8,7 +8,10 @@ using namespace std;
 
 int main()
 {
-	charStrInBuilt();
+	//charStrInBuilt();
+	char str[] = "abcd";
+	printAllsuffixes(str);
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

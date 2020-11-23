@@ -49,7 +49,17 @@ void charStrInBuilt() {
 
 	cout << str1 << endl;
 
+}
 
+void printAllsuffixes(char str[]) {
 
+	for (int i = strlen(str)-1; i >=0; i--) {
+		for (int j = i; j <= strlen(str) - 1; j++) {
 
+			cout << str[j];
+		}
+		
+		cout << endl;
+
+	}
 }
