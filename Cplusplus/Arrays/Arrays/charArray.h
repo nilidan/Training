@@ -51,6 +51,13 @@ void charStrInBuilt() {
 
 }
 
+//Print char array suffixes of input string
+//Ex: Input "abcd"
+//    Output d
+//           cd
+//           bcd
+//           abcd
+
 void printAllsuffixes(char str[]) {
 
 	for (int i = strlen(str)-1; i >=0; i--) {
