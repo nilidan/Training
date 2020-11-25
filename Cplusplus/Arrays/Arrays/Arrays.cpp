@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "charArray.h"
-#include "TwoDArrayAndSortAlogrithm.h"
+#include "TwoDArrayAndSearchSortAlogrithm.h"
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 
@@ -25,16 +25,29 @@ int main()
 	cin >> n;
 	
 	int *b = new int[n];
-	cout << "Enter numbers to sort"<<endl;
+	cout << "Enter numbers to sort or search"<<endl;
 	for (int i = 0; i < n; i++) {
 		cin >> b[i];
 	}
 	//selectionSort(b, n);
-	bubbleSort(b, n);
+	//bubbleSort(b, n);
 
-	for (int j = 0; j < n; j++) {
-		cout<< b[j] <<" ";
+	/*for (int j = 0; j < n; j++) {
+		cout << b[j] << " ";
+	}*/
+	
+	//int pos = linearSearchKey(b, n);
+	inbuiltSort(b, n); //need for binary search key
+	int pos = binarySearchKey(b, n);
+
+
+	if (pos == -1) {
+		cout << " not found"<<endl;
 	}
+	else {
+		cout << b[pos] << " found at index "<<pos<< endl;
+	}
+	
 
 	return 0;
 }

@@ -6,7 +6,8 @@
 using namespace std;
 
 //InbuiltFunctions
-//strlen() - get length of the char arra
+//strlen() - get length of the char arra, it is an unsigned int, cast it with (int) to become signed int.
+//			An unsigned variable type of int can hold zero and positive numbers, and a signed int holds negative, zero and positive numbers.
 //strcmp() - check if string are equal
 //strcpy(s1, s2) - copy strings note strcpy copys null char also
 //strncpy(s1, s2, n) - copy first n chars not if n is greater than str2 null char are added
@@ -60,8 +61,8 @@ void charStrInBuilt() {
 
 void printAllsuffixes(char str[]) {
 
-	for (int i = strlen(str)-1; i >=0; i--) {
-		for (int j = i; j <= strlen(str) - 1; j++) {
+	for (int i = ((int) strlen(str)-1); i >=0; i--) {
+		for (int j = i; j <= ((int) strlen(str) - 1); j++) {
 
 			cout << str[j];
 		}
