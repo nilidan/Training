@@ -8,13 +8,18 @@ using namespace std;
 
 int main()
 {
-	int n;
-	cin >> n;
+	//int n;
+	//cin >> n;
 	
-	int ans = fact(n);
-	int ansfib = fib(n);
-	cout << "Factorial " << ans << endl;
-	cout << "Fibonaci "<<ansfib << endl;
+	//int ans = fact(n);
+	//int ansfib = fib(n);
+	//cout << "Factorial " << ans << endl;
+	//cout << "Fibonaci "<<ansfib << endl;
+
+	//printNum(5);
+	//cout<<multiply(3, 5);
+	//cout<<countZero(10320);
+	cout << geoSum(3);
 	return 0;
 }
 

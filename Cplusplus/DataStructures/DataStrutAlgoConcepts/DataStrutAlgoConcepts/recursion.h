@@ -56,3 +56,97 @@ int power(int x, int n) {
 
 	return x * prod;//calculation;
 }
+
+//print all numbers from 1 to N ascending
+int printNum(int n) {
+
+	if (n == 1) {
+		cout << 1 << endl;
+		return 1;
+	}
+	
+	printNum(n - 1);
+	cout << n << endl;
+
+}
+
+//Print Descending
+void printNumDes(int n) {
+
+	if (n == 1) {
+		cout << 1 << endl;
+		return;
+	}
+	cout << n << endl;
+	printNumDes(n - 1);
+	return;
+
+}
+
+// devide by 10 to count the number of digits in a number
+int countDigits(int n) {
+	
+	if (n == 0)
+	{
+		return 0;
+	}
+	int smallAns = countDigits(n / 10);
+
+	return smallAns + 1;
+}
+
+int sumDigits(int n) {
+
+	if (n == 0)
+	{
+		return 0;
+	}
+	int smallAns = sumDigits(n / 10);
+
+	int lastDigit = n % 10;
+
+	return smallAns + lastDigit;
+}
+
+
+int multiply(int m, int n) {
+
+	if (n == 1)
+	{
+		return m; //base case
+	}
+	int smallAns = multiply(m, n-1); //assume m*n-1
+
+	return smallAns + m; // calc
+
+}
+
+int countZero(int n) {
+
+	if (n == 0)
+	{
+		return 0;
+	}
+	int smallAns = countZero(n / 10);
+
+	int lastDigit = n % 10;
+
+	if (lastDigit == 0) {
+		return 1 + smallAns;
+	}
+	else {
+		return smallAns;
+	}
+}
+
+double geoSum(int k)
+{
+	if (k == 0) {
+		return 1;
+	}
+	
+	double smallAns = (geoSum(k-1));
+
+	return smallAns + 1.0 / pow(2, k);
+}
+
