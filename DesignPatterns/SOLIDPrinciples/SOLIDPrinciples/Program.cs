@@ -10,8 +10,13 @@ namespace SOLIDPrinciples
     {
         static void Main(string[] args)
         {
-             Demo_SRP d = new Demo_SRP() ;
-            d.S_Demo();
+           //  Demo_SRP srp = new Demo_SRP() ;
+          //  srp.S_Demo();
+
+            Demo_OCP ocp = new Demo_OCP();
+
+            ocp.OC_Demo();
+ 
 
         }
     }

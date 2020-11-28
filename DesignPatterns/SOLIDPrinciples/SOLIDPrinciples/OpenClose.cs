@@ -32,6 +32,11 @@ namespace SOLIDPrinciples
         }
     }
 
+
+    /* Violates OCP = open for extension but closed for modification
+     * Have to modified the product filter for each queries. 
+     
+         */
     public class ProductFilter
     {
         // let's suppose we don't want ad-hoc queries on products
@@ -62,15 +67,23 @@ namespace SOLIDPrinciples
 
     // we introduce two new interfaces that are open for extension
 
+
+   //ISpecification IsSatisfied() is used to return a boolean if it meets specificatioon ant T allows any one to make specifications
+
     public interface ISpecification<T>
     {
         bool IsSatisfied(Product p);
     }
 
+    //IFilter is filtering mechanish that works any item type T
+    //more info: https://www.codeproject.com/articles/13391/using-ifilter-in-c
     public interface IFilter<T>
     {
         IEnumerable<T> Filter(IEnumerable<T> items, ISpecification<T> spec);
+        
     }
+
+
 
     public class ColorSpecification : ISpecification<Product>
     {
@@ -109,6 +122,8 @@ namespace SOLIDPrinciples
 
         public AndSpecification(ISpecification<T> first, ISpecification<T> second)
         {
+            // double question means If whatever is to the left is not null, use it, otherwise use what's to the right of double questions
+            // Ex translate if(first = null) throw Argument... else this.first = first
             this.first = first ?? throw new ArgumentNullException(paramName: nameof(first));
             this.second = second ?? throw new ArgumentNullException(paramName: nameof(second));
         }
@@ -119,6 +134,8 @@ namespace SOLIDPrinciples
         }
     }
 
+    //Implements the Ifilter
+    // IF IEnumerable items is statified by the criteria it returns I;
     public class BetterFilter : IFilter<Product>
     {
         public IEnumerable<Product> Filter(IEnumerable<Product> items, ISpecification<Product> spec)
