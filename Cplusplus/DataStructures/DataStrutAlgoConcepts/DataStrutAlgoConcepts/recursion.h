@@ -220,6 +220,71 @@ void mergeSort(int a[], int s, int e) {
 
 }
 
+int partition(int a[], int s, int e) {
+	//my solution approach 1
+	/*int countSmaller = 0;
+
+	for (int i = s; i < e; i++) {
+		if (a[i] < a[e])
+		{
+			countSmaller++;
+		}
+	}
+
+	int pivot = countSmaller + s;
+
+	swap(a[pivot], a[e]);
+	
+	int i = s;
+	int j = e;
+
+
+	while (i < pivot || j >pivot) {
+		if (a[i] > a[pivot] && a[j] < a[pivot])
+		{
+			swap(a[i], a[j]);
+			i++;
+			j--;
+
+		}
+		else if(a[i] < a[pivot]){
+			i++;
+		}
+		else if (a[j] > a[pivot])
+		{
+			j--;
+		}
+	}
+	return pivot;
+	*/
+
+	int i = s-1;
+	int pivot = a[e];
+
+	for (int j = s; j < e; j++) {
+		if (a[j] < pivot) {
+			i++;
+			swap(a[i], a[j]);
+			
+		}
+	}
+	swap(a[i+1], a[e]);
+	return i+1;
+	
+}
+
+void quickSort(int a[], int s, int e) {
+	if (s >= e) {
+		return;
+	}
+
+	int p = partition(a, s, e);
+
+	quickSort(a, s, p - 1);
+	quickSort(a, p + 1, e);
+
+}
+
 void printArray(int A[], int size)
 {
 	for (int i = 0; i < size; i++)

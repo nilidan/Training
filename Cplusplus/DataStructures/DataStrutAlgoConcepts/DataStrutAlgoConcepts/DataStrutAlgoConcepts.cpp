@@ -27,7 +27,8 @@ int main()
 	cout << "Given array is \n";
 	printArray(arr, arr_size);
 
-	mergeSort(arr, 0, arr_size - 1);
+	//mergeSort(arr, 0, arr_size - 1);
+	quickSort(arr, 0, arr_size - 1);
 
 	cout << "\nSorted array is \n";
 	printArray(arr, arr_size);
