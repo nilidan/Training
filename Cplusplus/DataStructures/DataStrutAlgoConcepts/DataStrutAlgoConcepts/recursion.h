@@ -258,18 +258,25 @@ int partition(int a[], int s, int e) {
 	return pivot;
 	*/
 
-	int i = s-1;
+	/* This function takes last element as pivot,
+	  places the pivot element at its correct
+	  position in sorted array, and places all
+	  smaller (smaller than pivot) to left of
+	  pivot and all greater elements to right
+	  of pivot */
+
+	int i = s;
 	int pivot = a[e];
 
 	for (int j = s; j < e; j++) {
 		if (a[j] < pivot) {
-			i++;
-			swap(a[i], a[j]);
 			
+			swap(a[i], a[j]);
+			i++;
 		}
 	}
-	swap(a[i+1], a[e]);
-	return i+1;
+	swap(a[i], a[e]);
+	return i;
 	
 }
 
