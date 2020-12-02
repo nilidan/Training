@@ -15,6 +15,53 @@ public:
 	}
 };
 
+Node* takeInput() {
+	int data;
+	cin >> data;
+	Node *head = NULL;
+	Node *tail = NULL;
+
+	while (data != -1) {
+		Node *n = new Node(data);
+
+		if (head == NULL) {
+			head = n;
+			tail = n;
+		}
+		else {
+			tail->next = n; // Inserting at Tail
+			tail = n;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
+//Insert At head
+
+Node* takeInputHead() {
+	int data;
+	cin >> data;
+	Node *head = NULL;
+	Node *tail = NULL;
+
+	while (data != -1) {
+		Node *n = new Node(data);
+
+		if (head == NULL) {
+			head = n;
+			tail = n;
+		}
+		else {
+			Node *temp = head;
+			head = n; 
+			head->next = temp;
+		}
+		cin >> data;
+	}
+	return head;
+}
+
 void print(Node *head) {
 	Node *temp = head;
 	while (temp!= NULL) {
@@ -31,7 +78,7 @@ void print(Node *head) {
 }
 int main()
 {
-	Node n1(1);
+	/*Node n1(1);
 	Node *head = &n1;
 
 	Node n2(2);
@@ -43,20 +90,24 @@ int main()
 	n2.next = &n3;
 	n3.next = &n4;
 	n4.next = &n5;
-
+	*/
 	//know the head, know the list just iterate
+	Node *head = takeInputHead();
 	print(head);
 
 	/*n1.next = &n2;
 	cout << n1.data << " " << n2.data << endl;
 	Node *head = &n1;
-	cout << head->data;
+	n3->next=n4;*/
+	//cout << head->data;
 
-	//Dynamically
+	/*
+	//Dynamically;
 	Node *n3 = new Node(3);
 	Node *n4 = new Node(4);
-
-	n3->next=n4;*/
+	Node *n5 = new Node(5);
+	n3->next = n4;
+	*/
 
 	return 0;
 }
