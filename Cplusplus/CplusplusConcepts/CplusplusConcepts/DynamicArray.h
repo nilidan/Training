@@ -48,8 +48,6 @@ void  heapMain() {
 	// else it keep on allocating memeory to the heap until it crash
 	// happens for example if declared in a loop.
 
-	int *p = new int;
-	delete p;
 	
 	p = new int;
 	delete p;
@@ -57,5 +55,27 @@ void  heapMain() {
 
 	//deleting an array in the heap
 	p = new int[60];
+	delete[]p;
+}
+
+void heapTwoDArray() {
+	int m, n;
+	cin >> m >> n;
+
+	//array of int pointers that points to array block in the heap
+	//used to create a dynamic 2d array.
+	int ** p = new int* [m];
+
+	for (int i = 0; i < m; i++) {
+		p[i] = new int[n];
+		for (int j = 0; j < n; j++) {
+			cin >> p[i][j];
+		}
+	}
+
+	for (int i = 0; i < m; i++) {
+		delete []p[i];
+	
+	}	
 	delete[]p;
 }
