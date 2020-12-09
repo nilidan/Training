@@ -23,5 +23,8 @@
     <ClInclude Include="Pointers.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="DynamicArray.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

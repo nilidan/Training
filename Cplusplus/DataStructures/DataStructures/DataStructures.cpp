@@ -53,9 +53,11 @@ Node* takeInputHead() {
 			tail = n;
 		}
 		else {
-			Node *temp = head;
+			/*Node *temp = head;
 			head = n; 
-			head->next = temp;
+			head->next = temp;*/
+			n->next = head;
+			head = n;
 		}
 		cin >> data;
 	}
