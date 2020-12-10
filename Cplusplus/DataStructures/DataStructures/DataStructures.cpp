@@ -78,6 +78,31 @@ void print(Node *head) {
 		head = head->next;
 	}
 }
+
+
+int length(Node *head) {
+	int size = 0;
+	while (head) {
+		size++;
+		head = head->next;
+	}
+	return size;
+}
+
+void printIthNode(Node *head, int i) {
+	int n = length(head);
+	if (i < 0 || i>n - 1) {
+		cout << "-1" << endl;
+		return;
+	}
+	int cnt = 1;
+	while (cnt <= i) {
+		head = head->next;
+		cnt++;
+	}
+	cout << head->data <<endl;
+}
+
 int main()
 {
 	/*Node n1(1);
@@ -96,6 +121,9 @@ int main()
 	//know the head, know the list just iterate
 	Node *head = takeInputHead();
 	print(head);
+	cout << endl;
+	cout << "the length is " << length(head)<<endl;
+
 
 	/*n1.next = &n2;
 	cout << n1.data << " " << n2.data << endl;
