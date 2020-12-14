@@ -15,6 +15,8 @@ public:
 	}
 };
 
+
+
 Node* takeInput() {
 	int data;
 	cin >> data;
@@ -38,7 +40,7 @@ Node* takeInput() {
 }
 
 //Insert At head
-
+// Uses the -1 to signify end of list
 Node* takeInputHead() {
 	int data;
 	cin >> data;
@@ -64,6 +66,8 @@ Node* takeInputHead() {
 	return head;
 }
 
+
+
 void print(Node *head) {
 	Node *temp = head;
 	while (temp!= NULL) {
@@ -73,10 +77,7 @@ void print(Node *head) {
 	temp = head;
 	cout << endl;
 	 // another way is 
-	while (head != NULL) {
-		cout <<head->data << " ";
-		head = head->next;
-	}
+	
 }
 
 
@@ -87,6 +88,32 @@ int length(Node *head) {
 		head = head->next;
 	}
 	return size;
+}
+
+
+
+Node* InsertIthPos(Node *head, int data, int i) {
+
+
+	int n = length(head);
+	if (i < 0 || i>n - 1) {
+		cout << "-1" << endl;
+		return head;
+	}
+	int cnt = 1;
+	Node *temp = head;
+	while (temp != NULL) {
+
+		if (cnt == i) {
+			Node *ith = new Node(data);
+			ith->next = temp->next;
+			temp->next = ith;
+			break;
+		}
+		temp = temp->next;
+		cnt++;
+	}
+	return head;
 }
 
 void printIthNode(Node *head, int i) {
@@ -106,7 +133,7 @@ void printIthNode(Node *head, int i) {
 	}
 	else
 	{
-		cout << "Null Value Has been reached" << endl;
+		cout << "Null Value Has been reached. Index not Valid" << endl;
 	}
 }
 
@@ -130,6 +157,17 @@ int main()
 	print(head);
 	cout << endl;
 	cout << "the length is " << length(head)<<endl;
+	/*
+	cout << endl;
+	cout << "Enter ith node to Print " <<endl;
+	
+	int i = 0;
+	cin >> i;
+	printIthNode(head, i);
+	*/
+
+    head = InsertIthPos(head, 100, 2);
+   print(head);
 
 
 	/*n1.next = &n2;
