@@ -96,11 +96,18 @@ void printIthNode(Node *head, int i) {
 		return;
 	}
 	int cnt = 1;
-	while (cnt <= i) {
+	while (cnt <= i && head!=NULL) {
 		head = head->next;
 		cnt++;
 	}
-	cout << head->data <<endl;
+	if (head != NULL)
+	{
+		cout << head->data << endl;
+	}
+	else
+	{
+		cout << "Null Value Has been reached" << endl;
+	}
 }
 
 int main()
