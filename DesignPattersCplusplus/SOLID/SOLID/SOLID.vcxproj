@@ -153,6 +153,10 @@
   <ItemGroup>
     <ClCompile Include="SOLID.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="OpenClose.h" />
+    <ClInclude Include="Substitution.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

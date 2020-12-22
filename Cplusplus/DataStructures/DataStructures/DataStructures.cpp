@@ -96,23 +96,32 @@ Node* InsertIthPos(Node *head, int data, int i) {
 
 
 	int n = length(head);
-	if (i < 0 || i>n - 1) {
-		cout << "-1" << endl;
+	if (i < 0 ){
+		return head;
+	}
+
+	if (i == 0) {
+		Node *n = new Node(data);
+		n ->next = head;
+		head = n;
 		return head;
 	}
 	int cnt = 1;
-	Node *temp = head;
-	while (temp != NULL) {
-
-		if (cnt == i) {
-			Node *ith = new Node(data);
-			ith->next = temp->next;
-			temp->next = ith;
-			break;
-		}
-		temp = temp->next;
+	
+	while (cnt <= i && head != NULL) {
+		head = head->next;
 		cnt++;
 	}
+
+	if (cnt == i) {
+		Node *ith = new Node(data);
+		Node *temp = head;
+		ith->next = temp->next;
+		temp->next = ith;
+		return head;
+	}
+		
+	
 	return head;
 }
 
@@ -157,18 +166,18 @@ int main()
 	print(head);
 	cout << endl;
 	cout << "the length is " << length(head)<<endl;
-	/*
+
 	cout << endl;
 	cout << "Enter ith node to Print " <<endl;
-	
+	/*
 	int i = 0;
 	cin >> i;
 	printIthNode(head, i);
+	print(head);
 	*/
-
     head = InsertIthPos(head, 100, 2);
    print(head);
-
+	
 
 	/*n1.next = &n2;
 	cout << n1.data << " " << n2.data << endl;

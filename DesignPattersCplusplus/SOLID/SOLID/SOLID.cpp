@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
+#include"Substitution.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
+	substitionMain();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
