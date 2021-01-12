@@ -75,6 +75,7 @@ void print(Node *head) {
 		temp = temp->next;
 	}
 	temp = head;
+	cout << " NULL";
 	cout << endl;
 	 // another way is 
 	
@@ -125,6 +126,37 @@ Node* InsertIthPos(Node *head, int data, int i) {
 	return head;
 }
 
+Node * deleteithNode(Node* head, int i) {
+	if (i < 0) {
+		return head;
+	}
+
+	if (i == 0 && head) {
+		//return head->next;
+		Node* newHead = head->next;
+		head->next = NULL;
+		delete head;
+		return newHead;
+	}
+
+	Node* curr = head;
+	int count = 1;
+	while (count <= i - 1 && curr != NULL) {
+		curr = curr->next;
+		count++;
+	}
+
+	//Memory Leak without delete and temp node to isolate
+	if (curr && curr->next) {
+		Node *temp = curr ->next;
+		curr->next = curr->next->next;
+		temp->next = NULL;
+		delete temp;
+
+		return head;
+	}
+	return head;
+}
 void printIthNode(Node *head, int i) {
 	int n = length(head);
 	if (i < 0 || i>n - 1) {
@@ -161,24 +193,28 @@ int main()
 	n3.next = &n4;
 	n4.next = &n5;
 	*/
-	//know the head, know the list just iterate
-	Node *head = takeInputHead();
-	print(head);
-	cout << endl;
-	cout << "the length is " << length(head)<<endl;
+	//know the head, know the list just iterate, end input need -1 to signify end of list
+	//Node *head = takeInputHead();
+	//print(head);
+	//cout << endl;
+	//cout << "the length is " << length(head)<<endl;
 
-	cout << endl;
-	cout << "Enter ith node to Print " <<endl;
-	/*
+	//cout << endl;
+	/*cout << "Enter ith node to Print " <<endl;
+	
 	int i = 0;
 	cin >> i;
 	printIthNode(head, i);
 	print(head);
-	*/
-    head = InsertIthPos(head, 100, 2);
-   print(head);
 	
-
+	head = InsertIthPos(head, 100, 2);
+   print(head);
+	*/
+	Node *head = takeInput();
+	int i = 0;
+	cin >> i;
+	head = deleteithNode(head, i);
+	print(head);
 	/*n1.next = &n2;
 	cout << n1.data << " " << n2.data << endl;
 	Node *head = &n1;
