@@ -154,6 +154,7 @@
     <ClCompile Include="SOLID.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InterfaceSegration.h" />
     <ClInclude Include="OpenClose.h" />
     <ClInclude Include="Substitution.h" />
   </ItemGroup>
