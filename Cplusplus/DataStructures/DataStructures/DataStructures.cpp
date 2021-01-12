@@ -91,8 +91,36 @@ int length(Node *head) {
 	return size;
 }
 
+int lengthRecursion(Node *head) {
+	if (head == NULL) return 0;
+	int smallAns = lengthRecursion(head->next);
+	return 1 + smallAns;
+}
 
+bool isPresent(Node *head, int data) {
+	Node *curr = head;
+	while (curr != NULL) {
+		if (curr->data == data) {
+			return true;
+		}
+		curr = curr->next;
 
+	}
+	return false;
+}
+//Recursive way of finding a node;
+bool isPresentRecur(Node *head, int data) {
+	if (head = NULL) {
+		return false;
+	}
+	Node *curr = head;
+	
+	if (curr->data == data) {
+			return true;
+		}
+	
+	return isPresentRecur(curr->next, data);
+}
 Node* InsertIthPos(Node *head, int data, int i) {
 
 
@@ -178,6 +206,10 @@ void printIthNode(Node *head, int i) {
 	}
 }
 
+Node* findMid(Node* head) {
+
+}
+
 int main()
 {
 	/*Node n1(1);
@@ -211,10 +243,19 @@ int main()
    print(head);
 	*/
 	Node *head = takeInput();
-	int i = 0;
-	cin >> i;
-	head = deleteithNode(head, i);
+	//int i = 0;
+	//cin >> i;
+	//head = deleteithNode(head, i);
+	cout << lengthRecursion(head) << endl;
 	print(head);
+	int data = 0;
+	if (isPresent(head, data)){
+		cout<<"found"<<endl;
+	}
+	else {
+		cout << "not found" << endl;
+	}
+	
 	/*n1.next = &n2;
 	cout << n1.data << " " << n2.data << endl;
 	Node *head = &n1;
