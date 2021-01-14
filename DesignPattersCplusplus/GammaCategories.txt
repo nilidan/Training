@@ -1,0 +1,14 @@
+Design Patterns are split into 3 categories called Gamma Categorization.
+
+Creation Patters
+  * Deal with the creation (contruction) of objects
+  * Explicit like constructor vs implicit like Dependency INjection Reflection
+  * Wholesale creation like a signal construction is enough or piecewise initilization
+
+Structural Patterns
+  * Concerned with the structure (clas members)
+  * Many patterns are wrappers that mimic the underlying class interface
+  * Stress the imporatnce of good API design
+
+Behavior Pattern
+  *The are all differentm, following their own thing solve it partical way.
