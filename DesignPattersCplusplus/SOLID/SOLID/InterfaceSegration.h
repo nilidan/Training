@@ -85,3 +85,9 @@ struct Machine : IMachine
 
 // IPrinter --> Printer
 // everything --> Machine
+/*
+Again interface segregation principle is basically to get you to not create interfaces
+which are too large and which require the implementors to maybe implement too much.
+Avoid stuffing implementation too much, segregate interface or make it smaller. This way it is easier to 
+avoid blank method, give what it is needed to client and not too much.
+*/

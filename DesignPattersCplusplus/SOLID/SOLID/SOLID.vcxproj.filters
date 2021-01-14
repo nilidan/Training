@@ -29,5 +29,8 @@
     <ClInclude Include="InterfaceSegration.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="DependencyInversion.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
