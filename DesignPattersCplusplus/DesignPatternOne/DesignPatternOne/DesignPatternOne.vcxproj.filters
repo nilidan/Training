@@ -18,8 +18,10 @@
     <ClCompile Include="DesignPatternOne.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Builder.cpp">
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Builder.h">
       <Filter>Source Files</Filter>
-    </ClCompile>
+    </ClInclude>
   </ItemGroup>
 </Project>
