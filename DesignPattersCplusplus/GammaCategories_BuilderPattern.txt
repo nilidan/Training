@@ -12,3 +12,12 @@ Structural Patterns
 
 Behavior Pattern
   *The are all differentm, following their own thing solve it partical way.
+
+Bulder is when object construction is complicate, provide an API for doing it succinctly.
+
+Motivation- 
+-Some objects are simple and can be created in single constructor
+-Other objects require a lot of ceremony to create
+-Having an object with 10 constructor arguments is not production 
+- Then it is better to opt for piecewise construction
+
