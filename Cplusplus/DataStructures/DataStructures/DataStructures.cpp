@@ -220,7 +220,6 @@ Node* findMid(Node* head) {
 	if (fast == NULL) {
 		return slow->next;
 	}
-
 	return slow;
 }
 
