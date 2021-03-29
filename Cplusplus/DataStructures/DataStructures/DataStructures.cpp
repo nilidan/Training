@@ -206,9 +206,26 @@ void printIthNode(Node *head, int i) {
 	}
 }
 
+//T(N)
+// solution for LeetCode :https://leetcode.com/problems/middle-of-the-linked-list/
 Node* findMid(Node* head) {
+	Node* slow = head;
+	Node* fast = head->next;
 
+
+	while (fast && fast->next) {
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	if (fast == NULL) {
+		return slow->next;
+	}
+
+	return slow;
 }
+
+
+
 
 int main()
 {
