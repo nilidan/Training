@@ -241,6 +241,36 @@ Node* reverseList(Node* head) {
 	return prev;
 }
 
+// For 2  traversao, find length, then use formula( length - kth +1), kth is the node to be deleted from end of list   
+// for one travesal, delete kth node from end of linked list
+// 2 pointers are at head
+// the 2nd pointer take k jumps
+// move one and two until two reaches node
+//  Leet code solution for https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/
+Node* removeNthFromEnd(Node* head, int n) {
+	Node* one = head;
+	Node* two = head;
+	Node* temp = NULL;
+
+	for (int i = 0; i < n; i++) {
+		two = two->next;
+	}
+	if (two == NULL) {
+		temp = one;
+		one = one->next;
+		delete temp;
+		return one;
+	}
+	while (two->next != NULL){
+		one = one->next;
+	     two = two->next;
+	}
+
+one->next = one->next->next;//memomry leak
+return head;
+
+}
+
 int main()
 {
 	/*Node n1(1);
