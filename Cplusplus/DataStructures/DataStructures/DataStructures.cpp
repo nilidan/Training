@@ -271,6 +271,103 @@ return head;
 
 }
 
+// Merge two sorted list together
+// solution for leetcoode :https://leetcode.com/problems/merge-two-sorted-lists/
+Node* mergeTwoLists(Node* l1, Node* l2) {
+	if (l1 == NULL) { return l2; }
+
+	if (l2 == NULL) { return l1; }
+
+	Node* mergeListHead = NULL;
+
+	if (l1->data < l2->data) {
+		mergeListHead = l1;
+		l1 = l1->next;
+	}
+	else {
+		mergeListHead = l2;
+		l2 = l2->next;
+	}
+
+
+	Node* temp = mergeListHead;
+
+	while (l1 && l2) {
+
+		if (l1->data < l2->data) {
+			temp->next = l1;
+			l1 = l1->next;
+		}
+		else {
+			temp->next = l2;
+			l2 = l2->next;
+		}
+		temp = temp->next;
+
+	}
+
+	if (l1) {
+		temp->next = l1;
+	}
+	else {
+		temp->next = l2;
+	}
+
+	return mergeListHead;
+}
+
+
+// Merge two sorted list together recursively
+
+// solution for leetcoode :https://leetcode.com/problems/merge-two-sorted-lists/
+Node* mergeTwoListsRecur(Node* l1, Node* l2) {
+	if (l1 == NULL) { return l2; }
+
+	if (l2 == NULL) { return l1; }
+
+	Node* mergeListHead = NULL;
+
+	if (l1->data < l2->data) {
+		mergeListHead = l1;
+		mergeListHead->next = mergeTwoListsRecur(l1->next, l2);
+	}
+	else {
+		mergeListHead = l2;
+		mergeListHead->next  = mergeTwoListsRecur(l2->next, l1);
+	}
+
+
+	return mergeListHead;
+}
+
+// Merge sort a linke list
+// Break list into 2halves
+// Mall mergesert on 2 halves recursion
+// merge the 2 sorted halves
+// leetcode solution for https://leetcode.com/problems/sort-list/
+
+Node* sortList(Node* head) {
+
+	if (head == NULL || head->next == NULL) {
+		return head;
+	}
+	Node* one = head;
+	Node* two = head->next;
+
+	while (two && two->next) {
+	    one = one->next;
+		two = two->next->next;
+	}
+
+	Node *n = one->next;
+	one->next = NULL;
+	Node* a = sortList(head);
+	Node* b = sortList(n);
+
+	
+	head = mergeTwoLists(a, b);
+	return head;
+}
 int main()
 {
 	/*Node n1(1);
