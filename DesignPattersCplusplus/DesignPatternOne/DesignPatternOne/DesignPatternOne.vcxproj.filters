@@ -23,5 +23,8 @@
     <ClInclude Include="Builder.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="GroovyStyleBulider.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
