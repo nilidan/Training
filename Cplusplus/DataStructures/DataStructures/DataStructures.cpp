@@ -263,7 +263,7 @@ Node* removeNthFromEnd(Node* head, int n) {
 	}
 	while (two->next != NULL){
 		one = one->next;
-	     two = two->next;
+		 two = two->next;
 	}
 
 one->next = one->next->next;//memomry leak
@@ -355,7 +355,7 @@ Node* sortList(Node* head) {
 	Node* two = head->next;
 
 	while (two && two->next) {
-	    one = one->next;
+		one = one->next;
 		two = two->next->next;
 	}
 
@@ -368,6 +368,16 @@ Node* sortList(Node* head) {
 	head = mergeTwoLists(a, b);
 	return head;
 }
+//Type of LinkedList
+/*double liked list
+   adv can access previous node and move back and forth
+	disadv more memory
+ circular liked list
+
+
+
+
+ */
 int main()
 {
 	/*Node n1(1);

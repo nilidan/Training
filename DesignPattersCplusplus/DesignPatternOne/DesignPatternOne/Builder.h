@@ -32,7 +32,7 @@ struct HtmlElement
 	string str(int indent = 0) const
 	{
 		ostringstream oss;
-		string i(indent_size*indent, ' ');
+		string i (indent_size*indent, ' '); //string contructor
 		oss << i << "<" << name << ">" << endl;
 		if (text.size() > 0)
 			oss << string(indent_size*(indent + 1), ' ') << text << endl;
