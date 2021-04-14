@@ -13,10 +13,22 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\BuilderFacade">
+      <UniqueIdentifier>{9e3f0580-b095-4e42-892f-630223b64997}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesignPatternOne.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\PersonBuilder.cpp">
+      <Filter>Source Files\BuilderFacade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\Facets.cpp">
+      <Filter>Source Files\BuilderFacade</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\Person.cpp">
+      <Filter>Source Files\BuilderFacade</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -24,6 +36,21 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="GroovyStyleBulider.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\PersonAddressBuilder.h">
+      <Filter>Source Files\BuilderFacade</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\PersonBuilder.h">
+      <Filter>Source Files\BuilderFacade</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\PersonJobBuilder.h">
+      <Filter>Source Files\BuilderFacade</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\Person.h">
+      <Filter>Source Files\BuilderFacade</Filter>
+    </ClInclude>
+    <ClInclude Include="BuilderCodingExcercise.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

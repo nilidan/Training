@@ -151,11 +151,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\Facets.cpp" />
+    <ClCompile Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\Person.cpp" />
+    <ClCompile Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\PersonBuilder.cpp" />
     <ClCompile Include="DesignPatternOne.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\Person.h" />
+    <ClInclude Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\PersonAddressBuilder.h" />
+    <ClInclude Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\PersonBuilder.h" />
+    <ClInclude Include="..\..\..\..\Nino\Downloads\BuilderFacets (1)\PersonJobBuilder.h" />
     <ClInclude Include="Builder.h" />
     <ClInclude Include="GroovyStyleBulider.h" />
+    <ClInclude Include="BuilderCodingExcercise.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
