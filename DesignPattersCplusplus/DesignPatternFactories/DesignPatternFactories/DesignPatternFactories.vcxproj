@@ -153,6 +153,10 @@
   <ItemGroup>
     <ClCompile Include="DesignPatternFactories.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="DedicatedFactory.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,0 +1,69 @@
+Factories
+
+Motivation 
+- Object creation logic becomes too convoluted
+- Contructor is not descriptive
+    * Name is mandated by name of containing type
+	*  Cannot overload with same sets of arguments with different names
+	* Can turn into 'optional parameter hell'
+	
+- Object creation (non-piecewise, unlike Builder) can be outsoured
+    * A serpate function (Factory Method)
+	* That may exist in a separte class
+	* Crete a hierarch of Factories
+	
+Why
+Scenario: So let's imagine that we're building a structure for representing a two dimensional point.
+    So I have a point and I have the x and y coordinates perhaps so x and y. Let's suppose I want to have a constructor.
+	So I'm going to put a constructor in here that initializes x and y. SSo far so good.  But this point is storing its information in Cartesian coordinates and thn suppose I want to initialize
+	it from polar coordinates (rho, theta) instead. 
+	
+	First thought is to add another contructor, but can't can have constructor with same set of arguments.
+	
+	
+     Ex
+	 
+   struct Point{
+	 Point(float x, float y): x(x),y(y){}
+	 
+	 //Point ( float rho, float theta){} not allowed due to same set of arguments to floating values
+
+
+	 float x,y;
+	 };
+
+Now lets imagine we are mandated to have the constructor have same name as structure or class.
+	so we can't have PointPolar as a constructor(); Then we would have enum type
+	
+	#include<cmath>
+	enum class PointType{
+	  cartesian,
+	  polar
+	
+	};
+	
+struct Point{
+	 //Point(float x, float y): x(x),y(y){}
+	 Point(float a, float b, PointType type = PointType:: Cartesain){
+	 
+	   if(type == PointType::cartesian){
+	   x=a;
+	   y=b;
+	   }
+	   else{
+	   x = a * cos(b);
+	   y = a * sin(b);
+	   }
+	 
+	 }
+	
+
+
+	 float x,y;
+	 };
+	 
+ Now the float variable a and b are ambigous and does not figuring out what is  needed
+Documating is needing to tell a,b are x or rho, y or theta. It is insufficent in describing what the situation, 
+
+ Now what we really want is we either want to be able to have two constructors with identical types of
+ arguments two floating point arguments. It imposssible with C++, so we use Factory to help us
