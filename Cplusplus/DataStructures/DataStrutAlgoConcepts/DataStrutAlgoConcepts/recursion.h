@@ -22,7 +22,7 @@ int fact(int n) {
 F(n) is true prove ndfadf
 
 1. Prove F(0) or F(1) is true -> base case
-2. Induction Hypthosis - Assume F(k) is true for any casedfdssa
+2. Induction Hypthosis - Assume F(k) is true for any casedfdssadfasd
 3. Induction steps using 2, prove F(k+1) is true
 
 https://www.codingninjas.com/blog/2020/06/19/learn-recursion-in-c/
