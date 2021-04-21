@@ -19,7 +19,7 @@ int fact(int n) {
 }
 
 /* Recursion works on Principal of Mathimatical Induction (PMI) 
-F(n) is true prove n
+F(n) is true prove ndfadf
 
 1. Prove F(0) or F(1) is true -> base case
 2. Induction Hypthosis - Assume F(k) is true for any case
