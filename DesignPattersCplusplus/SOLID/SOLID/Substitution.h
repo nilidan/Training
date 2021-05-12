@@ -59,7 +59,7 @@ void process(Rectangle& r)
 };
 
 
- //Uses the new bool method to tell if it is square
+ //Uses the new bool method to tell if it is square 
 void process(Rectangle& r)
 {
 	int w = r.get_width();
