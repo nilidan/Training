@@ -1,0 +1,52 @@
+/*
+*  Show the population per continent
+*  Database: World
+*  Table: Country
+*/
+
+SELECT *
+FROM country;
+
+
+ SELECT DISTINCT c.continent,
+   SUM(c.population) OVER(
+   PARTiTION By c.continent
+   
+   ) AS "Total Population"
+ FROM country as c
+
+/*
+*  To the previous query add on the ability to calculate the percentage of the world population
+*  What that means is that you will divide the population of that continent by the total population and multiply by 100 to get a percentage.
+*  Make sure you convert the population numbers to float using `population::float` otherwise you may see zero pop up
+*  Try to use CONCAT AND ROUND to make the data look pretty
+*
+*  Database: World
+*  Table: Country
+*/
+
+SELECT *
+FROM country;
+
+ SELECT DISTINCT c.continent,
+   SUM(c.population) over w1 "Continent Population",
+   CONCAT( 
+     ROUND(
+          (
+            SUM( population::float) OVER w1 /
+            SUM( population::float) over()
+          
+          )*100
+     ),'%' ) as "Percentage of Population"
+ FROM country as c
+WINDOW w1 AS( PARTITION BY continent)
+
+/*
+*  Count the number of towns per region
+*
+*  Database: France
+*  Table: Regions (Join + Window function)
+*/
+
+SELECT *
+FROM regions AS r;
